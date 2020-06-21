@@ -1,0 +1,265 @@
+page-detaildiaper {
+    .img-icon{
+        height: 25px;
+        margin-right: 10px;
+        border-radius: 22px;
+        width: 25px;
+    }
+    .img-style{
+        width: 100%;
+        height: 195px;
+    }
+    .slider-pager 
+{
+ color: #000;
+}
+.slider-pager-page.active
+{
+color: #f90;
+}
+.swiper-pagination-bullet-active {
+    background: #fff;
+    opacity: 1;
+}
+.star-div{
+    display: flex;
+    color:grey;
+    margin-top: -21px;
+}
+.icon-stylestar
+{
+    margin-top: 13px;
+}
+.add-div{
+    
+    margin-left: 12px;
+}
+.buttons-style{
+    background-color: #dcdcdc;
+    color: black;
+    
+    height: 24px;
+    width: 90px;
+    font-size: .9rem;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+.hr-style{
+    width: 94%;
+    height: 1.5px;
+    margin-top: 14px;
+}
+.p-tag{
+    margin-left: 6px;
+    padding: -20px;
+    margin-top: -2px;
+    color: #8a8a8a;
+}
+.address-tag
+{
+
+   height: 75px;
+   margin-top: -11px;
+   margin-left: 6px;
+}
+.p-tagdesign
+{
+   font-size: 1.2rem;
+   color:#8a8787 ; 
+}
+.mile-div{
+    margin-top: -21px;
+    display: flex;
+ }
+ .grid-rate
+ {
+     display:grid;
+     grid-template-columns:15px 1fr;  
+     width: 75%;
+     grid-template-rows: 20px 20px 20px 20px;
+     
+ }
+ .div-increment
+ {
+    height: 12px;
+    border: 1px solid grey;
+    border-radius: 9px;
+   
+ }
+ .div-increase{
+    height: 12px;
+    background-color: grey;
+    width: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+ }
+ .p-tags{
+    margin-top: -3px;
+}
+.col-style{
+    display: flex;
+    justify-content: flex-end;
+}
+.rating-design
+{
+    position: absolute;
+    top: -54px;
+}
+ .rate-p{
+    font-size: 5rem;
+    height: 25px;
+    font-weight: bold;
+    color: grey;
+ }
+ .star-icon{
+    margin-top: 31px;
+    margin-left: 6px;
+    color: grey;
+ }
+ .review-div{
+    margin-top: -12px;
+    margin-left: 4px;
+    color: grey;
+ }
+ #map {
+    width: 100%;
+    height: 100%;
+  }
+  .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] ion-icon[_ngcontent-c0] {
+    font-size: 19px !important;
+ }
+ .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] {
+    height: 28px;
+    background: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    width: 15px !important;
+ }
+}
+
+
+
+/* Animate  */ 
+
+@keyframes bgcolorchange {
+    0% {
+    color: #f2f2f2;
+    }
+    25% {
+    background: lightgray;
+    }
+    50% {
+    background: #f2f2f2;
+    }
+    75% {
+    background: lightgray;
+    }
+    100% {
+    background-color: #f2f2f2;
+    }
+    }
+    
+    @-webkit-keyframes bgcolorchange {
+    0% {
+    background: #f2f2f2;
+    }
+    25% {
+    background: lightgray;
+    }
+    50% {
+    background: #f2f2f2;
+    }
+    75% {
+    background: lightgray;
+    }
+    100% {
+    background: #f2f2f2;
+    }
+}
+.div-parent{
+    width:100%;
+    //position:absolute;
+    margin-top:5px;
+    height: 90px;
+    // border-bottom:1px solid #CCCCCC;
+}
+.div-left{
+  width:25%;
+  height:100%;
+  float:left;
+  padding:5px
+}
+.div-middle{
+    width:100%;
+    height:100%;
+    float:left;
+    padding-left: 5px;
+    padding-top:19px
+}
+.div-right{
+    width:20%;
+    height:100%;
+    float:right;
+    padding-top: 19px;  
+}
+.div-right-inner{
+   width:100%;
+   //margin:auto;
+   height: 31px;
+   padding: 2px;
+   border-radius: 5px;
+   background-color: lightgray;
+   -webkit-animation: infinite bgcolorchange 4s;
+   animation: 3s infinite bgcolorchange;
+  opacity: 0.5;
+}
+.p-text{
+padding: 0px;
+margin: 0px;
+color:black;
+}
+.p-points-text{
+ text-align: center;
+ color:#FFF;
+ font-size: 1.4rem;
+}
+.icon-style{
+    font-size: 1.0rem;
+    padding-top: 5px;
+    color:black;
+    font-family: "Loto-Regular"
+}
+.text-decor1
+{
+    width: 97%;
+    height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: lightgray;
+    -webkit-animation: infinite bgcolorchange 4s;
+    animation: 3s infinite bgcolorchange;
+   opacity: 0.5; 
+}
+.text-decor
+    {
+        width: 97%;
+        height: 21px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background-color: lightgray;
+        -webkit-animation: infinite bgcolorchange 4s;
+        animation: 3s infinite bgcolorchange;
+       opacity: 0.5;
+    }
+    .animate-imagebox
+    {
+        border-radius: 15px;
+        height: 80px;
+        background-color: lightgrey;
+        -webkit-animation: infinite bgcolorchange 4s;
+        animation: 3s infinite bgcolorchange;
+       opacity: 0.5;
+    }

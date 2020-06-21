@@ -1,0 +1,308 @@
+<!--
+  Generated template for the ListdiaperPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar style="    height: 57px;">
+      <!-- <ion-buttons start (click)="initdetail()">
+          <ion-icon  class="icon-style1"  ios="ios-home" md="md-home"></ion-icon>
+        </ion-buttons> -->
+        <ion-buttons start (click)="logout()">
+          <button ion-button>
+          <ion-icon  class="icon-style1" ios="ios-power" md="md-power"></ion-icon>
+         </button>
+        </ion-buttons>
+   <ion-buttons end style="       width: 83%; ">
+    <div class="searchbox">
+      <!-- <ion-icon class="icon-styleimage" name="search"></ion-icon>
+   <ion-input type="text" value=""></ion-input> -->
+   <ion-searchbar  style="    height: 33px;" (ionInput)="filterItems($event)"></ion-searchbar>
+  </div>
+  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    
+
+
+ <ion-row class="res-div">
+   <ion-col>
+
+   <p>{{resultplace}} results</p>
+   </ion-col>
+   <ion-col>
+   <!-- <p style="    text-align: end;margin-right: 19px;">Filter</p>
+   <ion-icon class="icon-styledown" md="md-arrow-dropdown"></ion-icon> -->
+   <ion-item>
+    <ion-label>Filter</ion-label>
+    <ion-select [(ngModel)]="Filter" interface="popover" (ionChange)="onSelectChange($event)">
+      <ion-option value="onemile">1 mile</ion-option>
+      <ion-option value="fivemile">5 mile</ion-option>
+      <ion-option value="tenmile">10 mile</ion-option>
+    </ion-select>
+  </ion-item>
+  </ion-col>
+  </ion-row>
+ <hr style="margin-top: -7px;
+ height: 2px;"> 
+ <div *ngIf="mile=='genric'">
+    <div *ngIf="resultplace==0">
+        <ion-list *ngIf="!users" >
+     
+                <p>Showing results please wait...</p>
+            <div *ngFor="let fake of fakeUsers">
+
+
+              <div  class="div-parent"   >  
+                <div   class="div-left" >
+                  <div class="animate-imagebox" width="80"  ></div>
+                  </div>
+                  <div class="div-middle" >
+                  <p class="p-text" style="font-size:1.4rem"></p>
+                      <div class="text-decor">
+                
+                  <p style="display: inline;
+                  font-size: .9rem;"></p>
+                      </div>
+                      <br>
+                      <div class="text-decor1">
+                
+                        <p style="display: inline;
+                        font-size: .9rem;"></p>
+                            </div>
+                </div>
+                  <div class="div-right" >
+                    <div class="div-right-inner" >
+                      <p class="p-text p-points-text" style="font-size:1.2rem"></p>
+                      <p class="p-text p-points-text"></p>
+                    </div>
+                    </div>
+                  </div>
+
+
+
+
+                </div>  
+          
+          
+              </ion-list>
+        </div>
+  <div class="grid" *ngFor="let value of namelist;let i=index" (click)="detaildiaper(i)">
+      
+    <div class="image-div">
+        <img class="img-style" [src]="value.photos">
+       </div>
+       <div class="address-div">
+        <p class="p-tag">{{value.address}}</p>  
+        <br>
+        <div class="star-div" *ngIf="value.rating=='Not given'">
+          <p style="margin-right: 2px;    margin-top: 10px;">0</p>
+          <!-- <ion-icon class="icon-stylestar" name="star"></ion-icon>
+          <ion-icon class="icon-stylestar" name="star"></ion-icon>
+          <ion-icon class="icon-stylestar" name="star"></ion-icon>
+          <ion-icon class="icon-stylestar" name="star"></ion-icon> -->
+          <div>
+          <ionic3-star-rating 
+      activeIcon = "ios-star"
+      defaultIcon = "ios-star-outline"
+      activeColor = "black" 
+      defaultColor = "grey"
+      readonly="true"
+      rating="0">
+  </ionic3-star-rating>
+  </div>
+          <p style="    margin-left: 4px;    MARGIN-TOP: 10PX;">(0)</p>
+  
+        </div>
+        <div class="star-div" *ngIf="value.rating!='Not given'">
+        <p style="margin-right: 2px;">{{value.rating}}</p>
+        <!-- <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon> -->
+        <div>
+        <ionic3-star-rating 
+    activeIcon = "ios-star"
+    defaultIcon = "ios-star-outline"
+    activeColor = "black" 
+    defaultColor = "grey"
+    readonly="true"
+    [rating]="value.rating">
+</ionic3-star-rating>
+</div>
+        <p style="    margin-left: 4px;    MARGIN-TOP: 10PX;">({{value.totalrate}})</p>
+
+      </div>
+      <div class="address-tag">
+        <div>
+         <p class="p-tagdesignad">{{value.detailaddress}}</p>
+        </div>
+        <div style="margin-top: -8px;">
+         <!-- <p class="p-tagdesign" >9779308331</p> -->
+        </div>
+        <div style="margin-top: -8px;">
+         <p class="p-tagdesign" >{{value.market}}</p>   
+        </div>
+        <div class="mile-div">
+          <p class="p-tagdesign" *ngIf="value.distance==1">{{value.distance}} mile</p>
+          <p class="p-tagdesign" *ngIf="value.distance>1">{{value.distance}} miles</p>
+        <p class="p-tagdesignm" style="position: absolute;
+          right: 13px">{{value.type}}</p>
+ 
+      </div>
+      </div>
+      </div>
+      </div>     
+
+ </div>
+ <div *ngIf="mile=='onem'">
+  <div class="grid" *ngFor="let value of namelist1;let i=index" (click)="detaildiaper1(i)">
+       <div class="image-div">
+        <img class="img-style" [src]="value.photos">
+       </div>
+       <div class="address-div">
+        <p class="p-tag">{{value.address}}</p>
+        <br>
+        <div class="star-div" *ngIf="value.rating!='Not given'">
+        <p style="margin-right: 2px;">{{value.rating}}</p>
+        <!-- <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon> -->
+        <div>
+        <ionic3-star-rating 
+    activeIcon = "ios-star"
+    defaultIcon = "ios-star-outline"
+    activeColor = "black" 
+    defaultColor = "grey"
+    readonly="true"
+    [rating]="value.rating">
+</ionic3-star-rating>
+</div>
+        <p style="    margin-left: 4px;    MARGIN-TOP: 10PX;">({{value.totalrate}})</p>
+
+      </div>
+      <div class="address-tag">
+        <div>
+         <p class="p-tagdesignad">{{value.detailaddress}}</p>
+        </div>
+        <div style="margin-top: -8px;">
+         <!-- <p class="p-tagdesign" >9779308331</p> -->
+        </div>
+        <div style="margin-top: -8px;">
+         <p class="p-tagdesign" >{{value.market}}</p>
+        </div>
+        <div class="mile-div">
+          <p class="p-tagdesign">{{value.distance}} miles</p>
+   
+        <p class="p-tagdesignm" style="position: absolute;
+          right: 13px">{{value.type}}</p>
+ 
+      </div>
+      </div>
+      </div>
+      </div>     
+
+ </div>
+ <div *ngIf="mile=='twom'">
+  <div class="grid" *ngFor="let value of namelist2;let i=index" (click)="detaildiaper2(i)">
+       <div class="image-div">
+        <img class="img-style" [src]="value.photos">
+       </div>
+       <div class="address-div">
+        <p class="p-tag">{{value.address}}</p>
+        <br>
+        <div class="star-div" *ngIf="value.rating!='Not given'">
+        <p style="margin-right: 2px;">{{value.rating}}</p>
+        <!-- <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon>
+        <ion-icon class="icon-stylestar" name="star"></ion-icon> -->
+        <div>
+        <ionic3-star-rating 
+    activeIcon = "ios-star"
+    defaultIcon = "ios-star-outline"
+    activeColor = "black" 
+    defaultColor = "grey"
+    readonly="true"
+    [rating]="value.rating">
+</ionic3-star-rating>
+</div>
+        <p style="    margin-left: 4px;    MARGIN-TOP: 10PX;">({{value.totalrate}})</p>
+
+      </div>
+      <div class="address-tag">
+        <div>
+         <p class="p-tagdesignad">{{value.detailaddress}}</p>
+        </div>
+        <div style="margin-top: -8px;">
+         <!-- <p class="p-tagdesign" >9779308331</p> -->
+        </div>
+        <div style="margin-top: -8px;">
+         <p class="p-tagdesign" >{{value.market}}</p>
+        </div>
+        <div class="mile-div">
+          <p class="p-tagdesign">{{value.distance}} miles</p>
+   
+        <p class="p-tagdesignm" style="position: absolute;
+          right: 13px">{{value.type}}</p>
+ 
+      </div>
+      </div>
+      </div>
+      </div>     
+
+ </div>
+ <div *ngIf="mile=='threem'">
+  <div class="grid" *ngFor="let value of namelist3;let i=index" (click)="detaildiaper3(i)">
+       <div class="image-div">
+        <img class="img-style" [src]="value.photos">
+       </div>
+       <div class="address-div">
+        <p class="p-tag">{{value.address}}</p>
+        <br>
+        <div class="star-div" *ngIf="value.rating!='Not given'">
+        <p style="margin-right: 2px;">{{value.rating}}</p>
+        <div>
+        <ionic3-star-rating 
+    activeIcon = "ios-star"
+    defaultIcon = "ios-star-outline"
+    activeColor = "black" 
+    defaultColor = "grey"
+    readonly="true"
+    [rating]="value.rating">
+</ionic3-star-rating>
+</div>
+        <p style="    margin-left: 4px;    MARGIN-TOP: 10PX;">({{value.totalrate}})</p>
+
+      </div>
+      <div class="address-tag">
+        <div>
+         <p class="p-tagdesignad">{{value.detailaddress}}</p>
+        </div>
+        <div style="margin-top: -8px;">
+         <!-- <p class="p-tagdesign" >9779308331</p> -->
+        </div>
+        <div style="margin-top: -8px;">
+         <p class="p-tagdesign" >{{value.market}}</p>
+        </div>
+        <div class="mile-div">
+          <p class="p-tagdesign">{{value.distance}} miles</p>
+   
+        <p class="p-tagdesignm" style="position: absolute;
+          right: 13px">{{value.type}}</p>
+ 
+      </div>
+      </div>
+      </div>
+      </div>     
+
+ </div>
+ <div #map id="map"></div>
+</ion-content>

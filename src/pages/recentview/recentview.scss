@@ -1,0 +1,95 @@
+page-recentview {
+    .search-textbox
+    {
+        width: 91%;
+        height: 15px;
+        
+    }
+    .searchbox{
+        background-color: #ffff;
+        width: 95%;
+        height: 33px;
+        border-radius: 7px;
+    }
+    .icon-style{
+        color: #228B22;
+        margin-right: 20px;
+        font-size: 2.9rem;
+        margin-left: 10px;
+    }
+    .icon-styleimage
+    {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color:#DCEFDC
+    }
+    .res-div{
+        margin-top: -16px;
+        height: -39px;
+        color: grey;
+    }
+    .icon-styledown{
+        position: absolute;
+        right: 10px;
+        top: 20px;
+    }
+    .grid{
+    
+        display: grid;
+        grid-template-columns: 100px 1fr;
+    
+        height: 150px;
+        border-bottom: 1px solid #E2E2E2;
+     }
+     .image-div
+     {
+        padding: 4px;
+     }
+     .address-div
+     {
+        margin-left:8px ;
+        margin-top: 3px;
+     }
+     .img-style{
+        height: 107px;
+        margin-top: 10px;
+        border-radius: 12px;
+    
+        
+     }
+     .p-tag{
+        font-size: 1.3rem;
+        margin-left: 4px;
+        font-weight: bold;
+        margin-bottom: 20px;
+     }
+     .star-div{
+        
+        display: flex;
+        margin-top: -39px;
+        margin-left: 5px;
+     }
+     .icon-stylestar{
+        display: inline-block;
+        font-size: 1.2em;
+        margin-top: 13px;
+        margin-left: 3px;
+     }
+     .address-tag
+     {
+    
+        height: 75px;
+        margin-top: -22px;
+        margin-left: 6px;
+     }
+     .p-tagdesign
+     {
+        font-size: 1.2rem;
+        color:#8a8787 ; 
+     }
+     .mile-div{
+        margin-top: -21px;
+        display: flex;
+     }
+}

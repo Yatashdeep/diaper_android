@@ -1,0 +1,28 @@
+page-register {
+    .ion-item{
+        border: 1px solid #95989A !important;
+        margin-top: 20px;
+    }
+     .scroll-content {
+        padding: 16px;
+        margin-top: 0px !important;
+    }
+    .error-text
+    {
+        color:red
+    }
+    .date-style
+    {
+        margin-top: -33px;
+        z-index: 1;
+        text-align: end;
+        color: grey;
+    }
+    .icon-style{
+        margin: -29px -9px -36px -10px;
+        z-index: 1;
+        width: 100%;
+        text-align: end;
+        color: grey;
+    }
+}

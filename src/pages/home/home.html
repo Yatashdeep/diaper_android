@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="light" hideBackButton="true">
+    <ion-title style="    text-align: center;">
+      Sign In 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row class="logo-style">
+     <div class="logo-circle">
+    <img class="img-style" src="assets/imgs/diaper.png">
+     </div>
+  </ion-row>
+ <ion-list> 
+       <ion-row style="    margin-top: -6px;">
+     
+          <ion-label class="label-style" >Email</ion-label>
+          <ion-item class="ion-item">
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+          <ion-label class="label-style" >Password</ion-label>
+          <ion-item class="ion-item">
+             <ion-input type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+        
+        
+  </ion-row>
+  <ion-row (click)="checkalert()">
+    <p class="forget-style">I Forgot my Password?</p>
+  </ion-row>
+  <ion-row style="margin-top: 30px;">
+    <button (click)="signin()" style="    border-radius: 4px;" full ion-button color="primary">Sign In</button>
+  </ion-row>
+<ion-row class="register-style" (click)="register()">
+  <button  style="border-radius: 4px;"ion-button color="primary">Register Now</button>
+</ion-row>
+<ion-row style="    margin-top: 15px;">
+  <ion-col style="    display: flex;
+  justify-content: center;">
+  <img class="img-stylelogo" style="    margin-right: 9px;" src="assets/imgs/002-facebook.png">
+  <img class="img-stylelogo" src="assets/imgs/001-instagram.png">
+  <img class="img-stylelogo" style="    margin-left: 9px;" src="assets/imgs/003-google-plus.png">  
+  </ion-col>
+</ion-row>
+<ion-row >
+  <p class="p-tag">Connect support if you can't log in</p>
+</ion-row>
+</ion-list>
+
+
+
+</ion-content>
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>ARLauncher</ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <iframe src="/assets/aframe-ar.html"></iframe>
+</ion-content> -->

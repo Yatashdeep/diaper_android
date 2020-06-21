@@ -1,0 +1,155 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="light">
+    <ion-title>Registration Form</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="signupform">
+  <ion-row style=" margin-top:66px;">
+     
+    
+    <ion-item class="ion-item">
+        <ion-label >First Name</ion-label>
+      <ion-input type="text" formControlName="firstname" [class.invalid]="!signupform.controls.firstname.valid && (signupform.controls.firstname.dirty || submitAttempt)"></ion-input>
+    </ion-item>
+    <div *ngIf="!signupform.controls.firstname.valid  && (signupform.controls.firstname.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid firstname.</p>
+      </div>
+    <ion-item class="ion-item">
+        <ion-label >Last Name</ion-label>
+       <ion-input  formControlName="lastname" [class.invalid]="!signupform.controls.lastname.valid && (signupform.controls.lastname.dirty || submitAttempt)" type="text"></ion-input>
+    </ion-item>
+    <div *ngIf="!signupform.controls.lastname.valid  && (signupform.controls.lastname.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid lastname.</p>
+      </div>
+    <ion-item class="ion-item">
+        <ion-label >Birth</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="birthdate"></ion-datetime>       
+    </ion-item>
+    <!-- <ion-label class="date-style">DD/MM/YYYY</ion-label> -->
+    <!-- <ion-item class="ion-item">
+        <ion-label >Gender</ion-label>
+       <ion-input type="password"></ion-input>
+     
+    </ion-item> -->
+    <ion-list style="width: 100%;">
+      <ion-item class="ion-item">
+        <ion-label>Gender</ion-label>
+        <ion-select formControlName="Gender">
+          <ion-option value="male">Male</ion-option>
+          <ion-option value="female">Female</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+
+    <!-- <ion-icon class="icon-style" ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon> -->
+    <ion-item class="ion-item">
+        <ion-label >Mobile</ion-label>
+      <ion-input  type="text" [class.invalid]="!signupform.controls.mobile.valid && (signupform.controls.mobile.dirty || submitAttempt)" formControlName="mobile"></ion-input>
+    </ion-item>
+    <div *ngIf="!signupform.controls.mobile.valid  && (signupform.controls.mobile.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid mobile.</p>
+      </div>
+    <ion-item class="ion-item">
+        <ion-label >Email</ion-label>
+       <ion-input type="text" [class.invalid]="!signupform.controls.mail.valid && (signupform.controls.mail.dirty || submitAttempt)" formControlName="mail"></ion-input>
+    </ion-item>
+    <div *ngIf="!signupform.controls.mail.valid  && (signupform.controls.mail.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid email.</p>
+      </div>
+    <ion-item class="ion-item">
+        <ion-label >Password</ion-label>
+      <ion-input [class.invalid]="!signupform.controls.password.valid && (signupform.controls.password.dirty || submitAttempt)" formControlName="password" type="password" ></ion-input>
+    </ion-item>
+    <div *ngIf="!signupform.controls.password.valid  && (signupform.controls.password.dirty || submitAttempt)">
+        <p class="error-text">Password Should be Six characters including one uppercase letter, one special character and alphanumeric characters .</p>
+      </div>
+    
+    <ion-item class="ion-item">
+        <ion-label >Confirm Password</ion-label>
+       <ion-input [class.invalid]="!signupform.controls.confirmPassword.valid && (signupform.controls.confirmPassword.dirty || submitAttempt)" formControlName="confirmPassword"  type="password"></ion-input>
+    </ion-item>
+    <div *ngIf="signupform.controls.confirmPassword.errors?.MatchPassword">
+        <p class="error-text">Password not matching</p>
+       </div>
+    </ion-row>
+
+    
+        <ion-label style="font-size:1.9rem;margin-top:22px">Children</ion-label>
+        <ion-label style="font-size:1.3rem;margin-top:-3px">Information for child 1</ion-label>
+   
+    <ion-row style="    margin-top: -15px;">
+     
+      <ion-item class="ion-item">
+          <ion-label>Full Name</ion-label>
+        <ion-input  formControlName="childfirstname" type="text" ></ion-input>
+      </ion-item>
+      
+      <ion-item class="ion-item">
+          <ion-label >Date of Birth</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" formControlName="childbirthdate"></ion-datetime> 
+      </ion-item>
+     
+   
+      <ion-list style="width: 100%;">
+        <ion-item class="ion-item">
+          <ion-label>Gender</ion-label>
+          <ion-select formControlName="childGender">
+            <ion-option value="male">Male</ion-option>
+            <ion-option value="female">Female</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    
+    </ion-row>
+  </form>
+    <ion-row >
+     <ion-col (click)="addchild()">
+      <p  style="color:#40AEFF;    margin-bottom: 24px;">+ Add Child</p>
+      </ion-col>
+      <ion-col (click)="closechild()" style="    text-align: end;">
+      <p *ngIf="countshow==true"  style="color:#40AEFF;    margin-bottom: 24px;">- close</p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let value of addchilddata;let i=index" style="    margin-top: -15px;">
+      <ion-label style="     font-size: 1.3rem;   margin-top: 21px;
+      margin-bottom: -9px;">Information for child {{i+2}}</ion-label>
+      <ion-item class="ion-item">
+          <ion-label >Full Name</ion-label>
+        <ion-input type="text" [(ngModel)]="value.fullnamechild"></ion-input>
+      </ion-item>
+      
+      <ion-item class="ion-item">
+          <ion-label >Date of Birth</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY"  [(ngModel)]="value.birthdatechild"></ion-datetime> 
+      </ion-item>
+     
+   
+      <ion-list style="width: 100%;">
+        <ion-item class="ion-item">
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="value.genderchild">
+            <ion-option value="male">Male</ion-option>
+            <ion-option value="female">Female</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    
+    </ion-row>
+   
+ <ion-row>
+    <button [disabled]="!signupform.valid" full (click)="registernavigate()" style="border-radius: 4px;"ion-button color="primary">Submit</button>
+ </ion-row>
+
+</ion-content>

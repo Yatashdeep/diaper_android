@@ -1,0 +1,54 @@
+<!--
+  Generated template for the RecentviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header> 
+  <ion-navbar>
+    <ion-title>Recent View</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+       <div class="grid" *ngFor="let value of ViewrecentFinal" (click)="detaildiaper(value[0].lat,value[0].lng)">  
+        <div class="image-div">
+         <img class="img-style" [src]="value[0].photos">
+        </div>
+        <div class="address-div">
+         <p class="p-tag">{{ value[0].address }} </p> 
+         <br>
+      <div class="star-div" *ngIf="value[0].rating=='Not given'">  
+         <p style="margin-right: 2px;" *ngIf="value[0].rating=='Not given'">0</p>
+         <p style="margin-right: 2px;" *ngIf="value[0].rating!='Not given'">{{ value[0].rating }}</p> 
+         <ion-icon class="icon-stylestar" name="star-outline"  *ngFor="let items of ratingVal" ></ion-icon>
+         <p style="margin-left: 4px;">({{ value[0].totalrate }})</p>
+      </div>
+      <div class="star-div" *ngIf="value[0].rating!='Not given'">
+        <p style="margin-right: 2px;">{{ value[0].rating }}</p> 
+        <ion-icon class="icon-stylestar" name="star" *ngFor="let items of CreateRateArr(value[0].rating)"></ion-icon>
+        <p style="margin-left: 4px;" >({{ value[0].totalrate }})</p>
+     </div>
+       <div class="address-tag">
+         <div>
+          <p class="p-tagdesign">{{ value[0].detailaddress }}</p> 
+         </div>
+           <!-- <div style="margin-top: -8px;">
+                    <p class="p-tagdesign" >9779308331</p>  
+                </div> -->   
+         <div style="margin-top: -8px;">
+          <p class="p-tagdesign" >{{ value[0].market }}</p>
+         </div>
+         <div class="mile-div">
+           <p class="p-tagdesign" *ngIf="value[0].distance==1">{{ value[0].distance }} mile</p>
+           <p class="p-tagdesign" *ngIf="value[0].distance>1">{{ value[0].distance }} miles</p>
+		  
+           <p class="p-tagdesign" style="position: absolute;
+    right: 13px;
+">{{ value[0].type }}</p></div>
+       </div>
+       </div>
+       </div>     
+  </div>
+</ion-content>

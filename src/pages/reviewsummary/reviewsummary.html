@@ -1,0 +1,65 @@
+<!--
+  Generated template for the ReviewsummaryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Review & Summary</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <ion-item *ngFor="let items of ReviewStarArray;let i=index;"> 
+    <ion-row (click)="usertap(i)">
+    <ion-col col-2>
+    <img style="height: 30px;" src="assets/imgs/user.png">
+    </ion-col>
+    <ion-col col-6>
+    <p >{{ items.userid.firstname+" "+items.userid.lastname }}</p>
+    <br>
+    <p style="margin-top: -17px;"> <ionic3-star-rating style=" margin-top: 2px;"
+      activeIcon = "ios-star"
+      defaultIcon = "ios-star-outline"
+      activeColor = "black" 
+      defaultColor = "grey"
+      readonly="true"
+      [rating]="items.star_rating">  
+  </ionic3-star-rating></p> 
+    </ion-col>
+    <!-- <ion-col col-4>
+    <p style="    text-align: end;
+    margin-top: 11px;
+    position: absolute;
+    right: 0px;">7h</p>
+    </ion-col> -->  
+    </ion-row>
+  </ion-item> 
+
+
+     <!-- <ion-item>
+        <ion-row>
+        <ion-col  col-2>
+        <img style="height: 30px;" src="assets/imgs/user.png">
+        </ion-col>
+        <ion-col col-6>
+        <p >Marwa hocane </p>
+        <br>
+        <p style="margin-top: -17px;">bravo!!</p>
+        </ion-col>
+        <ion-col col-4>
+        <p style="    text-align: end;
+        margin-top: 11px;
+        position: absolute;
+        right: 0px;">9 Nov</p>
+        </ion-col>
+        </ion-row>
+        </ion-item>  -->
+
+     
+</ion-content>

@@ -1,0 +1,43 @@
+page-reviewrate {
+.butt{
+  
+    position: absolute;
+    top: 20px;
+}
+.rate-div{
+    position: absolute;
+    left: 39px;
+    top: -1px;
+    font-size: 1.8rem;
+}
+.add-div{
+    margin-top: 38px;
+    margin-left: 36px;
+    font-size: 1.2rem;
+}
+.name-tag{
+    margin-top: 2px;
+    font-size: 1.7rem;
+}
+.review-tag{
+    color: grey;
+    margin-top: -15px;
+    font-size: 1.2rem;
+}
+.butt-choose{
+    border-color: grey;
+    color: grey;
+}
+.icon-stylestar{
+    color:#FFE629
+}
+.cam-div{
+    height: 112px;
+    width: 37%;
+    background-color: #efeaea;
+    margin-top: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
